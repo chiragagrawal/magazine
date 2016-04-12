@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :articles
-  get 'articles/new'  => 'articles#new'
-  post 'articles/create'  => 'articles#create'
+  resources :articles do
+      resources :comments
+      get 'articles/new'  => 'articles#new'
+      post 'articles/create'  => 'articles#create'
+  end
+  resources :comments
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

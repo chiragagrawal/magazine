@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Author</th>
+  </tr>
+  </thead>
+  <% @articles.each do |article| %>
+      <tbody>
+      <div>
+        <td><%= article.title %></td>
+
+      </div>
+      <div>
+
+        <td><%= article.body %></td>
+
+      </div>
+      <div>
+        <td><%= article.author %></td>
+
+      </div>
+      </tbody>
+  <% end %>
+
+</table>
