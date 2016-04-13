@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    debugger
     article = Article.find(params[:article_id])
     user_id = current_user.id
     @comment = article.comments.create(comment_params)
@@ -27,6 +26,10 @@ class CommentsController < ApplicationController
 
   end
 
+  def destroy
+
+
+  end
   private
 
   def comment_params

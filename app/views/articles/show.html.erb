@@ -15,6 +15,22 @@
     </tr>
 </tbody>
 </table>
+<table class = "table">
+  <thead>
+  <tr>
+    <th>Comments</th>
+  </tr>
+  </thead>
+
+  <% @article.comments.each do |comment| %>
+  <tbody>
+      <tr>
+        <td><%= comment.comment %></td>
+        <%= link_to 'Delete', article_comment_path(@article.id,comment) %>
+      </tr>
+  </tbody>
+  <% end %>
+</table>
 <h5><b>Write your Comments</b></h5>
     <%= form_for    :comments,  :url=> article_comments_path(@article.id), :method => :post do |f| %>
         <%= f.label :comment %>

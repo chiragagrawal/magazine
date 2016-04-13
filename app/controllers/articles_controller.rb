@@ -8,7 +8,9 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    debugger
      @article = Article.find(params[:id])
+     # @comments = @article.comments
   end
 
   def create
