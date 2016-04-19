@@ -1,0 +1,16 @@
+<table class = "table">
+  <thead>
+  <tr>
+    <th>Comments</th>
+  </tr>
+  </thead>
+  <% @comment.each do |comment| %>
+      <tbody>
+      <tr>
+        <td><%= comment.comment %>
+          <%#= link_to 'Delete', article_comment_path(@article.id,comment) %>
+        </td>
+      </tr>
+      </tbody>
+  <% end %>
+</table>
