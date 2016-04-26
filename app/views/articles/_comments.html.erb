@@ -10,6 +10,7 @@
         <td><%= comment.comment %>
           <%#= link_to 'Delete', article_comment_path(@article.id,comment) %>
         </td>
+        <td><%= link_to 'reply', new_reply_path %></td>
       </tr>
       </tbody>
   <% end %>
