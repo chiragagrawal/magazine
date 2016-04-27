@@ -8,11 +8,12 @@ Rails.application.routes.draw do
     get 'users/sign_out' => 'devise/sessions#destroy'
   end
   resources :articles do
-      resources :comments
-      get 'articles/new'  => 'articles#new'
-      post 'articles/create'  => 'articles#create'
+      resources :comments do
+          resources :replies
+      end
+
   end
-  resources :replies
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

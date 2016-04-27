@@ -1,8 +1,8 @@
-<%= form_for    :reply,  :url=> replies_path, :method => :post do |f| %>
-    <%= f.label :Reply %>
+<%= form_for    :@reply,  :url=> article_comment_replies_path, :method => :post do |f| %>
+    <%= f.label :reply %>
     <%= f.text_field    :reply %>
 
-    <%#= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :comment_id, value: @comment.id %>
 
     <%= f.submit "Create", class: "btn btn-large btn-primary" %>
 <% end %>
